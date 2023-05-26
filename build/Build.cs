@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.Git;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
-using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities.Collections;
@@ -43,6 +41,7 @@ partial class Build : NukeBuild
 		});
 
 	Target Restore => _ => _
+		.DependsOn(UpdateMyGetFeedCredentials)
 		.Executes(() =>
 		{
 			DotNetRestore(s => s
@@ -92,23 +91,5 @@ partial class Build : NukeBuild
 				.SetProperty("RepositoryBranch", GitRepository.Branch)
 				.SetProperty("RepositoryCommit", GitRepository.Commit)
 				.SetOutputDirectory(ArtifactsDirectory));
-		});
-
-	[Secret] [Parameter] readonly string MyGetFeedUrl;
-	[Secret] [Parameter] readonly string MyGetApiKey;
-
-	Target Publish => _ => _
-		.DependsOn(Pack)
-		.Requires(() => !string.IsNullOrEmpty(MyGetFeedUrl) && !string.IsNullOrEmpty(MyGetApiKey))
-		.Executes(() =>
-		{
-			IEnumerable<AbsolutePath> artifactPackages = ArtifactsDirectory.GlobFiles("*.nupkg");
-
-			DotNetNuGetPush(s => s
-				.SetSource(MyGetFeedUrl)
-				.SetApiKey(MyGetApiKey)
-				.EnableSkipDuplicate()
-				.CombineWith(artifactPackages, (_, v) => _
-					.SetTargetPath(v)));
 		});
 }

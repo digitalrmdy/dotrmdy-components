@@ -36,14 +36,9 @@ stages:
           - checkout: self
             fetchDepth: 0
           - task: CmdLine@2
-            displayName: 'Run: Clean'
+            displayName: 'Run: PublishToMyGet'
             inputs:
-              script: './build.cmd Publish'
+              script: './build.cmd PublishToMyGet'
             env:
-              MyGetFeedUrl: $(MyGetFeedUrl)
+              MyGetUsername: $(MyGetUsername)
               MyGetApiKey: $(MyGetApiKey)
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish: artifacts'
-            inputs:
-              artifactName: artifacts
-              pathToPublish: 'artifacts'

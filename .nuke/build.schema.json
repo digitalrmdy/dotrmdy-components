@@ -47,7 +47,7 @@
           "type": "string",
           "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
-        "MyGetFeedUrl": {
+        "MyGetUsername": {
           "type": "string",
           "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
@@ -83,9 +83,10 @@
               "Clean",
               "Compile",
               "Pack",
-              "Publish",
+              "PublishToMyGet",
               "Restore",
-              "RunTests"
+              "RunTests",
+              "UpdateMyGetFeedCredentials"
             ]
           }
         },
@@ -102,9 +103,10 @@
               "Clean",
               "Compile",
               "Pack",
-              "Publish",
+              "PublishToMyGet",
               "Restore",
-              "RunTests"
+              "RunTests",
+              "UpdateMyGetFeedCredentials"
             ]
           }
         },
