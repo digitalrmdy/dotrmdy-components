@@ -8,7 +8,6 @@
 
 	<PropertyGroup>
 		<Description>Provides a set of interfaces and extension methods that can be used for unifying logic across dependent packages.</Description>
-		<Authors>dotRMDY</Authors>
 	</PropertyGroup>
 
     <ItemGroup>
