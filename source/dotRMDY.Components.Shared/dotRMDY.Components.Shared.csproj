@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
-        <LangVersion>latest</LangVersion>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<Description>Provides a set of interfaces and extension methods that can be used for unifying logic across dependent packages.</Description>
 	</PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All" />
+	</ItemGroup>
 
 </Project>

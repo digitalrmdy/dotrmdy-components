@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <LangVersion>latest</LangVersion>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<Description>
@@ -13,14 +13,14 @@
 		</Description>
 	</PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
-        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All" />
-        <PackageReference Include="MvvmCross" Version="9.0.10" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+		<PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All" />
+		<PackageReference Include="MvvmCross" Version="9.0.10" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\dotRMDY.Components.Shared\dotRMDY.Components.Shared.csproj" />
-    </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\dotRMDY.Components.Shared\dotRMDY.Components.Shared.csproj" />
+	</ItemGroup>
 
 </Project>
