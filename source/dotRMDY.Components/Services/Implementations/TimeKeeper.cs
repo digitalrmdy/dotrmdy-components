@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace dotRMDY.Components.Shared.Services.Implementations
+namespace dotRMDY.Components.Services.Implementations
 {
     /// <summary>
     ///     Time keeper providing information from <see cref="DateTime" />, <see cref="DateTimeOffset" /> and

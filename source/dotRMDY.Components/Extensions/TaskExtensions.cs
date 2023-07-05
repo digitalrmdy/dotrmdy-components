@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace dotRMDY.Components.Shared.Extensions
+namespace dotRMDY.Components.Extensions
 {
     [PublicAPI]
     public static class TaskExtensions

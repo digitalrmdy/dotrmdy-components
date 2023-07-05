@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace dotRMDY.Components.Shared.Services
+namespace dotRMDY.Components.Services
 {
 	[PublicAPI]
 	public interface IMapper<in TFrom, out TTo>

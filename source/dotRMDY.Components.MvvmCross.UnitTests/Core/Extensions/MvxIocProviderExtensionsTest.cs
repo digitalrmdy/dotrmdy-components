@@ -2,8 +2,8 @@ using CommunityToolkit.Mvvm.Messaging;
 using dotRMDY.Components.MvvmCross.Core.Extensions;
 using dotRMDY.Components.MvvmCross.Core.Services.Implementations;
 using dotRMDY.Components.MvvmCross.UnitTests.TestHelpers;
-using dotRMDY.Components.Shared.Services;
-using dotRMDY.Components.Shared.Services.Implementations;
+using dotRMDY.Components.Services;
+using dotRMDY.Components.Services.Implementations;
 using FakeItEasy;
 using MvvmCross.IoC;
 using Xunit;
@@ -78,7 +78,7 @@ namespace dotRMDY.Components.MvvmCross.UnitTests.Core.Extensions
 		{
 			mvxIocProvider.VerifySingletonRegistration<CommunityToolkit.Mvvm.Messaging.IMessenger, WeakReferenceMessenger>()
 				.MustHaveHappenedOnceExactly();
-			mvxIocProvider.VerifyLazySingletonRegistration<dotRMDY.Components.Shared.Services.IMessenger, Messenger>()
+			mvxIocProvider.VerifyLazySingletonRegistration<Components.Services.IMessenger, Messenger>()
 				.MustHaveHappenedOnceExactly();
 		}
 

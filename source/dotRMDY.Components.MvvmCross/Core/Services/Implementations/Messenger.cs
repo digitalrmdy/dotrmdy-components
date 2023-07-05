@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Messaging;
 
 namespace dotRMDY.Components.MvvmCross.Core.Services.Implementations
 {
-    public class Messenger : dotRMDY.Components.Shared.Services.IMessenger
+    public class Messenger : Components.Services.IMessenger
     {
         private readonly IMessenger _messenger;
 

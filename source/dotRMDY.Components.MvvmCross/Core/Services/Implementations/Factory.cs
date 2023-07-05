@@ -1,4 +1,4 @@
-using dotRMDY.Components.Shared.Services;
+using dotRMDY.Components.Services;
 using MvvmCross.IoC;
 
 namespace dotRMDY.Components.MvvmCross.Core.Services.Implementations

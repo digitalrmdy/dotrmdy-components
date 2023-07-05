@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.Messaging;
 using dotRMDY.Components.MvvmCross.Core.Services.Implementations;
-using dotRMDY.Components.Shared.Services;
-using dotRMDY.Components.Shared.Services.Implementations;
+using dotRMDY.Components.Services;
+using dotRMDY.Components.Services.Implementations;
 using JetBrains.Annotations;
 using MvvmCross.IoC;
 
@@ -29,7 +29,7 @@ namespace dotRMDY.Components.MvvmCross.Core.Extensions
         public static IMvxIoCProvider RegisterMessenger(this IMvxIoCProvider iocProvider)
         {
             iocProvider.ConstructAndRegisterSingleton<CommunityToolkit.Mvvm.Messaging.IMessenger, WeakReferenceMessenger>();
-            iocProvider.LazyConstructAndRegisterSingleton<dotRMDY.Components.Shared.Services.IMessenger, Messenger>();
+            iocProvider.LazyConstructAndRegisterSingleton<Components.Services.IMessenger, Messenger>();
 
             return iocProvider;
         }

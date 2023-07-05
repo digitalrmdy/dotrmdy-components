@@ -1,26 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<LangVersion>latest</LangVersion>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<Description>
-			Provides MvvmCross-specific implementations of the service implementations provided in dotRMDY.Components.Shared,
-			as well as integration to register said implementations with MvvmCross easily.
-		</Description>
-	</PropertyGroup>
+    <PropertyGroup>
+        <Description>
+            Provides MvvmCross-specific implementations of the service implementations provided in dotRMDY.Components.Shared,
+            as well as integration to register said implementations with MvvmCross easily.
+        </Description>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
-		<PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All" />
-		<PackageReference Include="MvvmCross" Version="9.0.10" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0"/>
+        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="All"/>
+        <PackageReference Include="MvvmCross" Version="9.0.10"/>
+    </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\dotRMDY.Components.Shared\dotRMDY.Components.Shared.csproj" />
-	</ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\dotRMDY.Components\dotRMDY.Components.csproj"/>
+    </ItemGroup>
 
 </Project>

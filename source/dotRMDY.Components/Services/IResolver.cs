@@ -1,7 +1,7 @@
 using System;
 using JetBrains.Annotations;
 
-namespace dotRMDY.Components.Shared.Services
+namespace dotRMDY.Components.Services
 {
     [PublicAPI]
     public interface IResolver

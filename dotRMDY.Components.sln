@@ -2,11 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{5EC6C034-D066-44EE-B19B-B583E292D790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components.Shared", "source\dotRMDY.Components.Shared\dotRMDY.Components.Shared.csproj", "{0D9B9BD1-43E6-420D-B0CE-3DE839D33E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components", "source\dotRMDY.Components\dotRMDY.Components.csproj", "{0D9B9BD1-43E6-420D-B0CE-3DE839D33E38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components.MvvmCross", "source\dotRMDY.Components.MvvmCross\dotRMDY.Components.MvvmCross.csproj", "{237D24EC-A8A4-4048-888D-5B854BEEA551}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components.Shared.UnitTests", "source\dotRMDY.Components.Shared.UnitTests\dotRMDY.Components.Shared.UnitTests.csproj", "{EA892351-AC24-4336-9738-7A14C1D21622}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components.UnitTests", "source\dotRMDY.Components.UnitTests\dotRMDY.Components.UnitTests.csproj", "{EA892351-AC24-4336-9738-7A14C1D21622}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotRMDY.Components.MvvmCross.UnitTests", "source\dotRMDY.Components.MvvmCross.UnitTests\dotRMDY.Components.MvvmCross.UnitTests.csproj", "{EC22B5C5-AF62-47BA-B8AC-95993075F1E2}"
 EndProject

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using dotRMDY.Components.Shared.Extensions;
+using dotRMDY.Components.Extensions;
 using FluentAssertions;
 using Xunit;
 
-namespace dotRMDY.Components.Shared.UnitTests.Extensions
+namespace dotRMDY.Components.UnitTests.Extensions
 {
     public class TaskExtensionsTest
     {

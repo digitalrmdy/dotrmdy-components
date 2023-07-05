@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using JetBrains.Annotations;
 
-namespace dotRMDY.Components.Shared.Extensions
+namespace dotRMDY.Components.Extensions
 {
     [PublicAPI]
     public static class TypeExtensions
