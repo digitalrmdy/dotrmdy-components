@@ -1,6 +1,3 @@
-variables:
-    - group: dotRMDY-MyGet
-
 trigger: none # Disable CI trigger
 
 schedules:
@@ -20,3 +17,5 @@ steps:
       inputs:
           useConfigFile: true
           azureDevOpsAccessToken: '$(System.AccessToken)'
+      env:
+          AZURE_DEVOPS_PIPELINE_PAT: $(System.AccessToken)

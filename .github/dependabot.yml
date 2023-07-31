@@ -11,7 +11,7 @@ updates:
           interval: daily
       open-pull-requests-limit: 10
 registries:
-    RMDY-MyGet:
+    RMDY-AzureArtifacts:
         type: nuget-feed
-        url: 'https://www.myget.org/F/3factr/api/v3/index.json'
-        token: '${{MyGetUsername}}:${{MyGetApiKey}}'
+        url: 'https://pkgs.dev.azure.com/Growandglow/dotRMDY/_packaging/dotRMDY/nuget/v3/index.json'
+        token: 'PAT:${{AZURE_DEVOPS_PIPELINE_PAT}}'
