@@ -41,7 +41,7 @@ partial class Build : NukeBuild
 		});
 
 	Target Restore => _ => _
-		.DependsOn(UpdateMyGetFeedCredentials)
+		.DependsOn(UpdateAzureArtifactsFeedCredentials)
 		.Executes(() =>
 		{
 			DotNetRestore(s => s
@@ -92,4 +92,7 @@ partial class Build : NukeBuild
 				.SetProperty("RepositoryCommit", GitRepository.Commit)
 				.SetOutputDirectory(ArtifactsDirectory));
 		});
+
+	Target Publish => _ => _
+		.DependsOn(PublishToAzureArtifacts);
 }
