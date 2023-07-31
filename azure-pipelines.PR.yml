@@ -20,12 +20,6 @@ variables:
 trigger:
   batch: true
 
-pr:
-  branches:
-    include:
-      - main
-      - develop
-
 stages:
   - stage: ubuntu_latest
     displayName: 'ubuntu-latest'
