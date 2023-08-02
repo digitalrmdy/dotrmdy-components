@@ -41,7 +41,7 @@ partial class Build : NukeBuild
 		});
 
 	Target Restore => _ => _
-		.DependsOn(UpdateAzureArtifactsFeedCredentials)
+		.DependsOn(UpdateDotRmdyAzureArtifactsFeedCredentials)
 		.Executes(() =>
 		{
 			DotNetRestore(s => s
@@ -94,5 +94,5 @@ partial class Build : NukeBuild
 		});
 
 	Target Publish => _ => _
-		.DependsOn(PublishToAzureArtifacts);
+		.DependsOn(PublishToDotRmdyAzureArtifacts);
 }
