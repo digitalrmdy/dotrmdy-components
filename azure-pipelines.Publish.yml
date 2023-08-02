@@ -14,9 +14,6 @@
 # </auto-generated>
 # ------------------------------------------------------------------------------
 
-variables:
-  - group: dotRMDY-MyGet
-
 trigger:
   batch: true
   tags:
