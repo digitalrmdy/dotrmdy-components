@@ -14,11 +14,8 @@
 # </auto-generated>
 # ------------------------------------------------------------------------------
 
-variables:
-  - group: dotRMDY-MyGet
-
 trigger:
-  batch: true
+  none
 
 stages:
   - stage: ubuntu_latest
