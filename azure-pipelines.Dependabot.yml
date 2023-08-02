@@ -18,4 +18,4 @@ steps:
           useConfigFile: true
           azureDevOpsAccessToken: '$(System.AccessToken)'
       env:
-          AZURE_DEVOPS_PIPELINE_PAT: $(System.AccessToken)
+          RMDY_AZURE_ARTIFACTS_TOKEN: $(System.AccessToken)

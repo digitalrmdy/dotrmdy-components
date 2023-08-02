@@ -14,4 +14,4 @@ registries:
     RMDY-AzureArtifacts:
         type: nuget-feed
         url: 'https://pkgs.dev.azure.com/Growandglow/dotRMDY/_packaging/dotRMDY/nuget/v3/index.json'
-        token: 'PAT:${{AZURE_DEVOPS_PIPELINE_PAT}}'
+        token: 'PAT:${{RMDY_AZURE_ARTIFACTS_TOKEN}}'
