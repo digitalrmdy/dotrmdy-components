@@ -41,7 +41,7 @@ partial class Build : NukeBuild
 		});
 
 	Target Restore => _ => _
-		.DependsOn(UpdateDotRmdyAzureArtifactsFeedCredentials)
+		.DependsOn(UpdateFeedCredentials)
 		.Executes(() =>
 		{
 			DotNetRestore(s => s
@@ -49,6 +49,10 @@ partial class Build : NukeBuild
 				.EnableDeterministic()
 				.EnableContinuousIntegrationBuild());
 		});
+
+	Target UpdateFeedCredentials => _ => _
+		.Unlisted()
+		.DependsOn(UpdateDotRmdyAzureArtifactsFeedCredentials);
 
 	Target Compile => _ => _
 		.DependsOn(Restore)
