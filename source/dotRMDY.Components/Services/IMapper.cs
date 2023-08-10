@@ -6,5 +6,6 @@ namespace dotRMDY.Components.Services
 	public interface IMapper<in TFrom, out TTo>
 	{
 		TTo Map(TFrom from);
+		TTo? MapOrDefault(TFrom? from) => from != null ? Map(from) : default;
 	}
 }
