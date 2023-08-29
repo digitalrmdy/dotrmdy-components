@@ -80,10 +80,12 @@
               "Compile",
               "Pack",
               "Publish",
+              "PublishTestAndCoverageResultsToAzurePipelines",
               "PublishToDotRmdyAzureArtifacts",
               "Restore",
               "RunTests",
-              "UpdateDotRmdyAzureArtifactsFeedCredentials"
+              "UpdateDotRmdyAzureArtifactsFeedCredentials",
+              "UpdateFeedCredentials"
             ]
           }
         },
@@ -101,10 +103,12 @@
               "Compile",
               "Pack",
               "Publish",
+              "PublishTestAndCoverageResultsToAzurePipelines",
               "PublishToDotRmdyAzureArtifacts",
               "Restore",
               "RunTests",
-              "UpdateDotRmdyAzureArtifactsFeedCredentials"
+              "UpdateDotRmdyAzureArtifactsFeedCredentials",
+              "UpdateFeedCredentials"
             ]
           }
         },

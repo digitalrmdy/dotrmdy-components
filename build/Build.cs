@@ -1,3 +1,4 @@
+using System.Linq;
 using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.Git;
@@ -5,8 +6,10 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
+using Nuke.Common.Tools.ReportGenerator;
 using Nuke.Common.Utilities.Collections;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
+using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 
 [ShutdownDotNetAfterServerBuild]
 partial class Build : NukeBuild
@@ -27,17 +30,23 @@ partial class Build : NukeBuild
 
 	[GitVersion(NoFetch = true)] readonly GitVersion GitVersion;
 
-	AbsolutePath SourceDirectory => RootDirectory / "source";
-	AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
+	static AbsolutePath SourceDirectory => RootDirectory / "source";
+	static AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
+
+	static AbsolutePath ResultsDirectory => TemporaryDirectory / "results";
+	static AbsolutePath CoverageResultsDirectory => ResultsDirectory / "coverage";
+	static AbsolutePath CoverageResultsReportDirectory => CoverageResultsDirectory / "report";
 
 	Target Clean => _ => _
 		.Before(Restore)
 		.Executes(() =>
 		{
 			SourceDirectory
-				.GlobDirectories("**/bin", "**/obj")
+				.GlobDirectories("**/bin", "**/obj", "**/TestResults")
 				.ForEach(ap => ap.DeleteDirectory());
+
 			ArtifactsDirectory.CreateOrCleanDirectory();
+			ResultsDirectory.DeleteDirectory();
 		});
 
 	Target Restore => _ => _
@@ -78,7 +87,18 @@ partial class Build : NukeBuild
 				.SetProjectFile(Solution)
 				.SetConfiguration(Configuration)
 				.EnableNoRestore()
-				.EnableNoBuild());
+				.EnableNoBuild()
+				.SetLoggers("trx")
+				.SetDataCollector("XPlat Code Coverage")
+				.AddRunSetting("DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format", "cobertura"));
+
+			ReportGenerator(s => s
+				.SetReportTypes(ReportTypes.HtmlInline_AzurePipelines, ReportTypes.Cobertura)
+				.SetReports(Solution
+					.GetAllProjects("*.UnitTests")
+					.SelectMany(x => Globbing.GlobFiles((string) (x.Directory / "TestResults"), "**/coverage.cobertura.xml")))
+				.SetTargetDirectory(CoverageResultsReportDirectory)
+				.SetVerbosity(ReportGeneratorVerbosity.Verbose));
 		});
 
 	Target Pack => _ => _
