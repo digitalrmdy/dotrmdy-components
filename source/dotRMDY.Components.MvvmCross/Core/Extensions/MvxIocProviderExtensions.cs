@@ -37,6 +37,7 @@ namespace dotRMDY.Components.MvvmCross.Core.Extensions
         public static IMvxIoCProvider RegisterUtilityServices(this IMvxIoCProvider iocProvider)
         {
             iocProvider.LazyConstructAndRegisterSingleton<ITimeKeeper, TimeKeeper>();
+            iocProvider.LazyConstructAndRegisterSingleton<ITaskRunner, TaskRunner>();
 
             return iocProvider;
         }
