@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace dotRMDY.Components.Services.Implementations;
 
-public class TaskRunner
+public class TaskRunner: ITaskRunner
 {
 	public virtual Task Run(Action action)
 	{
@@ -21,6 +22,11 @@ public class TaskRunner
 	}
 
 	public virtual Task<TResult[]> WhenAll<TResult>(params Task<TResult>[] tasks)
+	{
+		return Task.WhenAll(tasks);
+	}
+
+	public Task<TResult[]> WhenAll<TResult>(IEnumerable<Task<TResult>> tasks)
 	{
 		return Task.WhenAll(tasks);
 	}

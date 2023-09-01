@@ -86,6 +86,8 @@ namespace dotRMDY.Components.MvvmCross.UnitTests.Core.Extensions
 		{
 			mvxIocProvider.VerifyLazySingletonRegistration<ITimeKeeper, TimeKeeper>()
 				.MustHaveHappenedOnceExactly();
+			mvxIocProvider.VerifyLazySingletonRegistration<ITaskRunner, TaskRunner>()
+				.MustHaveHappenedOnceExactly();
 		}
 	}
 }

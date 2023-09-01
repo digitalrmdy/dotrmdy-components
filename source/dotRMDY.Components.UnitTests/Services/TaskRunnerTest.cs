@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using dotRMDY.Components.Services.Implementations;
 using FluentAssertions;
@@ -67,6 +68,19 @@ public class TaskRunnerTest
 
 		// Act
 		var result = sut.WhenAll(new[] { Task.FromResult(1) });
+
+		// Assert
+		result.Should().NotBeNull();
+	}
+
+	[Fact]
+	public void WhenAll_TResult_Array_Empty()
+	{
+		// Arrange
+		var sut = new TaskRunner();
+
+		// Act
+		var result = sut.WhenAll(Array.Empty<Task<int>>());
 
 		// Assert
 		result.Should().NotBeNull();
