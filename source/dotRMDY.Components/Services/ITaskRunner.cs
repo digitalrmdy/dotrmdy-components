@@ -11,8 +11,10 @@ public interface ITaskRunner
 {
 	Task Run(Action action);
 	Task Run(Func<Task> action);
+	Task<TResult> Run<TResult>(Func<Task<TResult>?> action);
 	Task Run(Action action, CancellationToken cancellationToken);
 	Task Run(Func<Task> action, CancellationToken cancellationToken);
+	Task<TResult> Run<TResult>(Func<Task<TResult>?> action, CancellationToken cancellationToken);
 	Task Delay(TimeSpan delay, CancellationToken cancellationToken);
 	Task Delay(int milliSecondsDelay, CancellationToken cancellationToken);
 	Task WhenAll(params Task[] tasks);
