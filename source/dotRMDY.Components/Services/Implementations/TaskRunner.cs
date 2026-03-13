@@ -17,6 +17,11 @@ public class TaskRunner: ITaskRunner
 		return Task.Run(action);
 	}
 
+	public Task<TResult> Run<TResult>(Func<Task<TResult>?> action)
+	{
+		return Task.Run(action);
+	}
+
 	public Task Run(Action action, CancellationToken cancellationToken)
 	{
 		return Task.Run(action, cancellationToken);
@@ -27,10 +32,15 @@ public class TaskRunner: ITaskRunner
 		return Task.Run(action, cancellationToken);
 	}
 
+	public Task<TResult> Run<TResult>(Func<Task<TResult>?> action, CancellationToken cancellationToken)
+	{
+		return Task.Run(action, cancellationToken);
+	}
+
 	public Task Delay(int milliSecondsDelay, CancellationToken cancellationToken)
 	{
 		return Task.Delay(milliSecondsDelay, cancellationToken);
-	}	
+	}
 
 	public Task Delay(TimeSpan delay, CancellationToken cancellationToken)
 	{
